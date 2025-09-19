@@ -14,6 +14,7 @@ For Achievement 4 - Task 1
 User story: As a user, I should be able to click on an event or button so that I can expand to see more details or collapse to see fewer details
 
 Scenario 1: An event element is collapsed by default
+
 -GIVEN the user is viewing an event or event list
 -WHEN the user has not clicked on any specific event or button
 -THEN the detailed info is collapsed
