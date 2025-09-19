@@ -11,10 +11,9 @@ Currently, two official plugins are available:
 For Achievement 4 - Task 1
 
 ### Feature 2: Show/Hide Event Details
-User story: As a user, I should be able to click on an event or button so that I can expand to see more details or collapse to see fewer details
+User story: As a user, I should be able to click on an event or button so that I can expand to see more details or collapse to see fewer details.
 
 Scenario 1: An event element is collapsed by default
-
 -GIVEN the user is viewing an event or event list
 -WHEN the user has not clicked on any specific event or button
 -THEN the detailed info is collapsed
@@ -30,6 +29,7 @@ Scenario 3: User can collapse an event to hide details
 -THEN it will collapse to hide details
 
 ### Feature 3: Specify Number of Events
+User story: As a user, I should be able to select the number so I can see a specific number of events.
 
 Scenario 1: When user hasn’t specified a number, 32 events are shown by default.
 -GIVEN the user is viewing the main page
@@ -41,9 +41,32 @@ Scenario 2: User can change the number of events displayed.
 -WHEN they specify a number
 -THEN only that number of events will be shown
 
+### Feature 4: Use the App When Offline
+User story: As a user, I should be able to view events offline so that I may continue to use the app.
 
+Scenario 1: Show cached data when there’s no internet connection.
+-GIVEN the user successfully opened and was viewing the app
+-WHEN user loses connection or is otherwise offline
+-THEN it will display cached data
 
-Scenario xxx: 
--GIVEN
--WHEN
--THEN
+Scenario 2: Show error when user changes search settings (city, number of events).
+-GIVEN the user had selected search criteria (city, number of events) and then lost their connection
+-WHEN the user attemps to change search criteria
+-THEN they will receive an error informing them that they will have to wait until back online
+
+### Feature 5: Add an App Shortcut to the Home
+User story: As a user, I should be able to add a shortcut to my home screen so that I can quickly open the app.
+
+Scenario 1: User can install the meet app as a shortcut on their device home screen.
+-GIVEN a user would like quick access to the app
+-WHEN they install a shortcut
+-THEN they will have easy access to opening the app
+*** This handled by the user's OS and is not testable ***
+
+### Feature 6: Display Charts Visualizing Event Details
+User story: As a user, I should be able to see a chart or other graphic displaying upcoming events in each city so that I can quickly see that info.
+
+Scenario 1: Show a chart with the number of upcoming events in each city.
+-GIVEN the user has selected a city
+-WHEN they land on the main screen
+-THEN the app should display a chart with upcoming events
