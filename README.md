@@ -7,8 +7,10 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
+## Meet App
+A serverless React PWA (progressive web application) app, written using a TDD (test driven development) approach.  It uses the Google API Calendar to display upcoming events, and gives the user the ability to search by city and also display a specified number of results (events).  The app also displays visual aids to show upcoming events in their city of choosing and to show popularity of event genres.  OAuth is used for authorization flow.
+
 ## Project Features & Scenarios
-For Achievement 4 - Task 1
 
 ### Feature 2: Show/Hide Event Details
 User story: As a user, I should be able to click on an event or button so that I can expand to see more details or collapse to see fewer details.
