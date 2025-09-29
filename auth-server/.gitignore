@@ -1,1 +1,4 @@
 config.json
+
+# Serverless directories
+.serverless
