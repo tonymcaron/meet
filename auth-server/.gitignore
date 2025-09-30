@@ -2,3 +2,7 @@ config.json
 
 # Serverless directories
 .serverless
+
+# Package directories
+node_modules
+jspm_packages
