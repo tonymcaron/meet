@@ -20,7 +20,7 @@ describe('<NumberOfEvents /> component', () => {
   });
 
   test('default number of events is 32', async () => {
-    const numberTextBox = NumberOfEventsComponent.querybyRole('spinbutton');
+    const numberTextBox = NumberOfEventsComponent.queryByRole('spinbutton');
     expect(numberTextBox).toHaveValue(32);
   });
 

@@ -9,7 +9,10 @@ const App = () => {
   return (
     <div className="App">
       <CitySearch />
-      <NumberOfEvents setCurrentNOE={setCurrentNOE} />
+      <NumberOfEvents
+        currentNOE={currentNOE}
+        setCurrentNOE={setCurrentNOE}
+      />
       <EventList />
     </div>
   );
