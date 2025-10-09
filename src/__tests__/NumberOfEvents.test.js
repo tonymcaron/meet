@@ -5,7 +5,7 @@ import userEvent from '@testing-library/user-event';
 
 describe('<NumberOfEvents /> component', () => {
   let NumberOfEventsComponent;
-  let setCurrentNOE;
+  let setCurrentNOE = () => { };
   beforeEach(() => {
     NumberOfEventsComponent = render(<NumberOfEvents
       currentNOE={32}
