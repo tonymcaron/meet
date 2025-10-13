@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1760394637267" clover="3.2.0">
-  <project timestamp="1760394637267" name="All files">
-    <metrics statements="74" coveredstatements="44" conditionals="26" coveredconditionals="6" methods="17" coveredmethods="14" elements="117" coveredelements="64" complexity="0" loc="74" ncloc="74" packages="2" files="3" classes="3"/>
+<coverage generated="1760397913002" clover="3.2.0">
+  <project timestamp="1760397913002" name="All files">
+    <metrics statements="80" coveredstatements="45" conditionals="28" coveredconditionals="6" methods="18" coveredmethods="14" elements="126" coveredelements="65" complexity="0" loc="80" ncloc="80" packages="2" files="3" classes="3"/>
     <package name="src">
-      <metrics statements="54" coveredstatements="24" conditionals="22" coveredconditionals="3" methods="10" coveredmethods="7"/>
+      <metrics statements="60" coveredstatements="25" conditionals="24" coveredconditionals="3" methods="11" coveredmethods="7"/>
       <file name="App.jsx" path="C:\Users\tonym\Documents\careerfoundry\meet\src\App.jsx">
         <metrics statements="14" coveredstatements="14" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4"/>
         <line num="9" count="3" type="stmt"/>
@@ -22,7 +22,7 @@
         <line num="28" count="11" type="stmt"/>
       </file>
       <file name="api.js" path="C:\Users\tonym\Documents\careerfoundry\meet\src\api.js">
-        <metrics statements="40" coveredstatements="10" conditionals="20" coveredconditionals="1" methods="6" coveredmethods="3"/>
+        <metrics statements="46" coveredstatements="11" conditionals="22" coveredconditionals="1" methods="7" coveredmethods="3"/>
         <line num="13" count="4" type="stmt"/>
         <line num="14" count="350" type="stmt"/>
         <line num="15" count="10" type="stmt"/>
@@ -63,6 +63,12 @@
         <line num="78" count="0" type="stmt"/>
         <line num="80" count="0" type="stmt"/>
         <line num="81" count="0" type="stmt"/>
+        <line num="85" count="4" type="stmt"/>
+        <line num="86" count="0" type="stmt"/>
+        <line num="87" count="0" type="stmt"/>
+        <line num="90" count="0" type="stmt"/>
+        <line num="91" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="93" count="0" type="stmt"/>
       </file>
     </package>
     <package name="src.components">
