@@ -81,3 +81,14 @@ const removeQuery = () => {
     window.history.pushState("", "", newurl);
   }
 };
+
+const getToken = async (code) => {
+  const encodeCode = encodeURIComponent(code);
+  const response = await fetch(
+    "https://meet-phi-bay.vercel.app/api/token" + "/" + encodeCode
+  );
+  const { access_token } = await response.json();
+  access_token && localStorage.setItem("access_token", access_token);
+
+  return access_token;
+};
