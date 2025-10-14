@@ -37,7 +37,7 @@ export const getEvents = async () => {
 
   if (token) {
     removeQuery();
-    const url = "https://arn:aws:lambda:us-west-1:830661489503:function:auth-server-dev-getCalendarEvents" + "/" + token;
+    const url = "https://aws:lambda:us-west-1:830661489503:function:auth-server-dev-getCalendarEvents" + "/" + token;
     const response = await fetch(url);
     const result = await response.json();
     if (result) {
@@ -56,7 +56,7 @@ export const getAccessToken = async () => {
     const code = await searchParams.get("code");
     if (!code) {
       const response = await fetch(
-        "https://arn:aws:lambda:us-west-1:830661489503:function:auth-server-dev-getAuthURL"
+        "https://aws:lambda:us-west-1:830661489503:function:auth-server-dev-getAuthURL"
       );
       const result = await response.json();
       const { authUrl } = result;
@@ -85,7 +85,7 @@ const removeQuery = () => {
 const getToken = async (code) => {
   const encodeCode = encodeURIComponent(code);
   const response = await fetch(
-    "https://arn:aws:lambda:us-west-1:830661489503:function:auth-server-dev-getAccessToken" + "/" + encodeCode
+    "https://aws:lambda:us-west-1:830661489503:function:auth-server-dev-getAccessToken" + "/" + encodeCode
   );
   const { access_token } = await response.json();
   access_token && localStorage.setItem("access_token", access_token);
