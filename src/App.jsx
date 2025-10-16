@@ -27,6 +27,7 @@ const App = () => {
 
   return (
     <div className="App">
+      <div className="app-name">MEET</div>
       <CitySearch
         allLocations={allLocations}
         setCurrentCity={setCurrentCity}
