@@ -54,6 +54,10 @@ input[type="number"] {
   margin-bottom: 20px;
 }
 
+input[type="number"] {
+  max-width: 60px;
+}
+
 .city {
   width: 250px;
   max-width: 90%;
