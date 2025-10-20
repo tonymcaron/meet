@@ -26,9 +26,11 @@ User story: As a user, I should be able to filter events by city so that I can s
 -THEN the user should receive a list of cities (suggestions) that match what they’ve typed.
 
 #### Scenario 3: User can select a city from the suggested list
--GIVEN user was typing “Berlin” in the city textbox AND the list of suggested cities is showing;  
+-GIVEN user was typing “Berlin” in the city textbox;
+-AND the list of suggested cities is showing;  
 -WHEN the user selects a city (e.g., “Berlin, Germany”) from the list;  
--THEN their city should be changed to that city (i.e., “Berlin, Germany”) AND the user should receive a list of upcoming events in that city.
+-THEN their city should be changed to that city (i.e., “Berlin, Germany”;
+AND the user should receive a list of upcoming events in that city.
 
 ### Feature 2: Show/Hide Event Details
 User story: As a user, I should be able to click on an event or button so that I can expand to see more details or collapse to see fewer details.
@@ -38,7 +40,7 @@ User story: As a user, I should be able to click on an event or button so that I
 -WHEN the user has not clicked on any specific event or button;  
 -THEN the detailed info is collapsed.
 
-#### Scenario 2: User can expand an event to see details
+#### Scenario 2: User can expand an event to see its details
 -GIVEN the user would like to see more details about an event;  
 -WHEN the user clicks on the event or a button on event element;  
 -THEN it will expand to show more details.
