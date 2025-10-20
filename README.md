@@ -47,7 +47,7 @@ User story: As a user, I should be able to click on an event or button so that I
 
 #### Scenario 3: User can collapse an event to hide details
 -GIVEN the user would like to collapse to see fewer details about an event;  
--WHENthe user clicks on the event or a button on the event element;  
+-WHEN the user clicks on the event or a button on the event element;  
 -THEN it will collapse to hide details.
 
 ### Feature 3: Specify Number of Events

@@ -8,9 +8,9 @@ import userEvent from '@testing-library/user-event';
 const feature = loadFeature('./src/features/filterEventsByCity.feature');
 
 defineFeature(feature, test => {
+
   test('When user hasn’t searched for a specific city, show upcoming events from all cities', ({ given, when, then }) => {
     given('the user hasn\'t searched for any city', () => {
-
     });
 
     let AppComponent;

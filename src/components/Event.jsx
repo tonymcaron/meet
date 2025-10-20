@@ -9,7 +9,7 @@ const Event = ({ event }) => {
       <p>{event && event.location}</p>
       <p>{event && (new Date(event.created)).toUTCString()}</p>
       {showDetails ? (
-        <p className="details">{event && event.description}</p>
+        <p className="details" data-testid="event-details">{event && event.description}</p>
       ) : null
       }
       <button

@@ -3,6 +3,7 @@ import puppeteer from 'puppeteer';
 describe('show/hide event details', () => {
   let browser;
   let page;
+
   beforeAll(async () => {
     try { // TROUBLESHOOTING
       console.log('Launching Puppeteer...'); // TROUBLESHOOTING
