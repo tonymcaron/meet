@@ -1,39 +1,31 @@
 import puppeteer from 'puppeteer';
 
+let browser;
+let page;
+
+beforeAll(async () => {
+
+  browser = await puppeteer.launch({
+    headless: false,
+    slowMo: 250, // slow down to 250ms
+    timeout: 0, // removes any puppeteer/browser timeout limitations (this isn't hte same as the timeout of jest)
+    executablePath: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
+    args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    userDataDir: `./tmp/chrome_profile_${Date.now()}`
+  });
+
+  page = await browser.newPage();
+  await page.goto('http://localhost:5173/');
+  await page.waitForSelector('#event-list .event', { timeout: 10000 });
+});
+
+afterAll(async () => {
+  if (browser) {
+    await browser.close();
+  }
+});
+
 describe('show/hide event details', () => {
-  let browser;
-  let page;
-
-  beforeAll(async () => {
-    try { // TROUBLESHOOTING
-      console.log('Launching Puppeteer...'); // TROUBLESHOOTING
-      browser = await puppeteer.launch({
-        headless: true,
-        slowMo: 250, // slow down to 250ms
-        timeout: 0, // removes any puppeteer/browser timeout limitations (this isn't hte same as the timeout of jest)
-        executablePath: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
-        args: ['--no-sandbox', '--disable-setuid-sandbox'], // TROUBLESHOOTING
-        userDataDir: `./tmp/chrome_profile_${Date.now()}` // TROUBLESHOOTING
-      });
-      console.log('Browser launched successfully'); // TROUBLESHOOTING
-
-      page = await browser.newPage();
-      console.log('Navigating to page...');
-      await page.goto('http://localhost:5173/');
-      console.log('Page loaded, waiting for event selector...'); // TROUBLESHOOTING
-      await page.waitForSelector('.event', { timeout: 10000 });
-      console.log('Event selector found'); // TROUBLESHOOTING
-    } catch (err) {// TROUBLESHOOTING
-      console.error('Puppeteer failed to launch or load', err); // TROUBLESHOOTING
-      throw err;
-    }
-  });
-
-  afterAll(async () => {
-    if (browser) {
-      await browser.close();
-    }
-  });
 
   test('An event element is collapsed by default', async () => {
     const eventDetails = await page.$('.event .details');
@@ -55,26 +47,6 @@ describe('show/hide event details', () => {
 });
 
 describe('Filter events by city', () => {
-  let browser;
-  let page;
-
-  beforeAll(async () => {
-    browser = await puppeteer.launch({
-      headless: true,
-      args: ['--no-sandbox', '--disable-setuid-sandbox'],
-      executablePath: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe', // adjust if needed
-      timeout: 0
-    });
-    page = await browser.newPage();
-    await page.goto('http://localhost:5173/');
-    await page.waitForSelector('#city-search');
-  });
-
-  afterAll(async () => {
-    if (browser) {
-      await browser.close();
-    }
-  });
 
   // Scenario 1: When user hasn’t searched for a specific city, show upcoming events from all cities
   test('When user hasn’t searched for a specific city, show upcoming events from all cities', async () => {
@@ -98,21 +70,21 @@ describe('Filter events by city', () => {
     await page.click('#city-search input', { clickCount: 3 });
     await page.keyboard.press('Backspace');
     await page.type('#city-search input', 'Berlin');
-    await page.waitForSelector('#city-search ul li');
+    await page.waitForSelector('#city-search .suggestions li');
 
     // Click first suggestion
-    await page.click('#city-search ul li');
+    await page.click('#city-search .suggestions li');
 
     // Check that input value has updated to “Berlin, Germany”
     const inputValue = await page.$eval('#city-search input', el => el.value);
     expect(inputValue).toBe('Berlin, Germany');
 
-    // Verify that only Berlin events are shown
-    const events = await page.$$eval('#event-list .event', elements => elements.length);
-    expect(events).toBeGreaterThan(0);
+    // Wait for events to load
+    await page.waitForSelector('#event-list .event', { visible: true });
+    const locations = await page.$$eval('#event-list .event p:first-of-type', els => els.map(e => e.textContent)
+    );
 
-    // Verify all events are located in Berlin
-    const locations = await page.$$eval('#event-list .event p', els => els.map(e => e.textContent));
+    // Ensure all events are in Berlin
     const allInBerlin = locations.every(loc => loc.includes('Berlin'));
     expect(allInBerlin).toBe(true);
   });
