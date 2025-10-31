@@ -6,7 +6,7 @@ let page;
 beforeAll(async () => {
 
   browser = await puppeteer.launch({
-    headless: false,
+    headless: true,
     slowMo: 250, // slow down to 250ms
     timeout: 0, // removes any puppeteer/browser timeout limitations (this isn't hte same as the timeout of jest)
     executablePath: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
