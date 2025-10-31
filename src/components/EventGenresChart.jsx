@@ -1,4 +1,10 @@
-import { PieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip, Text } from "recharts";
+import {
+  PieChart,
+  Pie,
+  Cell,
+  ResponsiveContainer,
+  Legend,
+} from "recharts";
 import React, { useState, useEffect } from "react";
 
 const EventGenresChart = ({ events }) => {
