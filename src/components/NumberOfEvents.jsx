@@ -10,7 +10,7 @@ const NumberOfEvents = ({ currentNOE, setCurrentNOE, setErrorAlert }) => {
     setCurrentNOE(value);
 
     if (isNaN(value) || value <= 0 || value > 32) {
-      setErrorAlert("Please enter a valid number of events; max 32");
+      setErrorAlert("Please enter a valid number of events - max 32");
     } else {
       setErrorAlert("");
     }
