@@ -15,11 +15,9 @@ body {
 .App {
   text-align: center;
   padding: 2% 5%;
-  /* max-width: 600px; */
-  max-width: 900px;
+  max-width: 600px;
   width: 100%;
   box-sizing: border-box;
-  margin: 0 auto; /* Potential fix */
 }
 
 .App * {
@@ -114,8 +112,7 @@ label {
   border-radius: 10px;
   position: relative;
   width: 100%;
-  /* max-width: 600px; */
-  max-width: 900px;
+  max-width: 600px;
   background-color: #3b3b3b;
   color: #f88e9f;
 }
@@ -148,16 +145,6 @@ label {
 .charts-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  /* Below is added for potential fix */
-  gap: 30px;
-  width: 100%;
-  margin-top: 30px;
-}
-
-/* Below is added for potential fix */
-.chart-wrapper {
-  width: 100%;
-  min-width: 0;
 }
 
 @media (max-width: 576px) {
