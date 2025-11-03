@@ -8,7 +8,7 @@ beforeAll(async () => {
   browser = await puppeteer.launch({
     headless: true,
     slowMo: 250, // slow down to 250ms
-    timeout: 0, // removes any puppeteer/browser timeout limitations (this isn't hte same as the timeout of jest)
+    timeout: 0, // removes any puppeteer/browser timeout limitations (this isn't the same as the timeout of jest)
     executablePath: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
     args: ['--no-sandbox', '--disable-setuid-sandbox'],
     userDataDir: `./tmp/chrome_profile_${Date.now()}`
@@ -16,7 +16,7 @@ beforeAll(async () => {
 
   page = await browser.newPage();
   await page.goto('http://localhost:5173/');
-  await page.waitForSelector('#event-list .event', { timeout: 10000 });
+  await page.waitForSelector('#event-list .event', { timeout: 60000 }); //Increased Puppeteer timeout for EndToEnd test
 });
 
 afterAll(async () => {

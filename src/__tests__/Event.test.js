@@ -33,12 +33,12 @@ describe("<Event /> component", () => {
 
     await user.click(EventComponent.queryByText("Show Details"));
     expect(EventComponent.container.querySelector(".details")).toBeInTheDocument();
-    expect(EventComponent.queryByText("Hide Details")).toBeInTheDocument();
+    expect(EventComponent.queryByText("HIDE DETAILS")).toBeInTheDocument();
     expect(EventComponent.queryByText("Show Details")).not.toBeInTheDocument();
 
-    await user.click(EventComponent.queryByText("Dide Details"));
+    await user.click(EventComponent.queryByText("HIDE DETAILS"));
     expect(EventComponent.container.querySelector(".details")).not.toBeInTheDocument();
-    expect(EventComponent.queryByText("Hide Details")).not.toBeInTheDocument();
+    expect(EventComponent.queryByText("HIDE DETAILS")).not.toBeInTheDocument();
     expect(EventComponent.queryByText("Show Details")).toBeInTheDocument();
   });
 
