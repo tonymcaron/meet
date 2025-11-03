@@ -145,6 +145,16 @@ label {
 .charts-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  /* Below is added for potential fix */
+  gap: 30px;
+  width: 100%;
+  margin-top: 30px;
+}
+
+/* Below is added for potential fix */
+.chart-wrapper {
+  width: 100%;
+  min-width: 0;
 }
 
 @media (max-width: 576px) {

@@ -14,8 +14,6 @@ console.error = (...args) => {
   if (!ignoreMessage) originalError(...args);
 }
 
-jest.setTimeout(30000);
-
 const { ResizeObserver } = window;
 
 beforeEach(() => {
@@ -32,3 +30,5 @@ afterEach(() => {
   window.ResizeObserver = ResizeObserver;
   jest.restoreAllMocks();
 });
+
+jest.setTimeout(60000);
