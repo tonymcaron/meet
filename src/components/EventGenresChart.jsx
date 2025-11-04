@@ -39,10 +39,11 @@ const EventGenresChart = ({ events }) => {
         textAnchor={x > cx ? 'start' : 'end'}
         dominantBaseline='central'
       >
-        {`${genres[index]} ${(percent * 100).toFixed(0)}%`}
+        {`${(percent * 100).toFixed(0)}%`}
       </text>
     ) : null;
   };
+  // ${genres[index]}
 
   return (
     <ResponsiveContainer width="300" height={400}>
