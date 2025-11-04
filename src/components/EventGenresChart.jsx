@@ -46,7 +46,7 @@ const EventGenresChart = ({ events }) => {
   // ${genres[index]}
 
   return (
-    <ResponsiveContainer width="300" height={400}>
+    <ResponsiveContainer width="305" height={400}>
       <PieChart>
         <Pie
           data={data}
