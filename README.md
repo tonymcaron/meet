@@ -10,6 +10,18 @@ Currently, two official plugins are available:
 ## Meet App
 A serverless React PWA (progressive web application) app, written using a TDD (test driven development) approach.  It uses the Google API Calendar to display upcoming events, and gives the user the ability to search by city and also display a specified number of results (events).  The app also displays visual aids to show upcoming events in their city of choosing and to show popularity of event genres.  OAuth is used for authorization flow.
 
+## Techn Stack
+- React (front-end framework)
+- Node.js & npm (runtime and package manager)
+- AWS Lambda (serverless functions for backend)
+- Google Calendar API (event data retrieval)
+- OAuth2 (authentication flow)
+- Jest/Cucumber (testing frameworks for TDD)
+- Git & GitHub (version control and hosting)
+- Vercel (deployment)
+- Service Workers (offline capabilities)
+- Recharts (data visualization library)
+
 ## Project Features & Scenarios
 
 ### Feature 1: Filter Events By City
