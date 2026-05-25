@@ -110,13 +110,14 @@ module.exports.getCalendarEvents = async (event) => {
       };
     })
     .catch((error) => {
+      console.error("getCalendarEvents error:", JSON.stringify(error, Object.getOwnPropertyNames(error)));
       return {
         statusCode: 500,
         headers: {
           'Access-Control-Allow-Origin': '*',
           'Access-Control-Allow-Credentials': true,
         },
-        body: JSON.stringify(error),
+        body: JSON.stringify(error, Object.getOwnPropertyNames(error)),
       };
     });
 };
